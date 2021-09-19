@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sample form</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div class="wrapper">
+		<center>
+			<select name="lang_select" class="lang_selector" id="lang_select" onChange="set_lang(this.value);">
+				<option value="en">en</option>
+				<option value="ru">ru</option>
+				<option value="ar">ar</option>
+			</select>
+			<div class="lang_select_btns">
+				<button class="lang_select_btn en_btn active"
+					onclick="set_lang(this.innerText)">en</button>
+				<button class="lang_select_btn ru_btn"
+					onclick="set_lang(this.innerText)">ru</button>
+				<button class="lang_select_btn xx_btn"
+					onclick="set_lang(this.innerText)">ar</button>
+			</div>
+		</center>
+		<h2 id="label_title"></h2>
+		<p id="success_message"></p>
+		<p id="exception_message"></p>
+		<form onsubmit="form_submit_callback(); return false;" method="post">
+			<div class="namesInput">
+				<div>
+					<label for="nameInput" id="label_firstname"></label>
+					<input class="nameInput" type="text" placeholder="" id="form_firstname">
+				</div>
+				<div>
+					<label for="nameInput" class="last_name_label"  id="label_lastname"></label>
+					<input class="nameInput" type="text" placeholder="" id="form_lastname">
+				</div>
+			</div>
+			<div class="contactInf">
+				<div class="form">
+					<label for="form_email" id="label_email"></label>
+					<input type="mail" id="form_email" />
+				</div>
+				<div class="form">
+					<label for="form_company" id="label_company"></label>
+					<input type="text" id="form_company" />
+				</div>
+				<div class="form">
+					<label for="form_city" id="label_city"></label>
+					<input type="text" id="form_city" />
+				</div>
+				<div class="form">
+					<label for="form_msg" id="label_message"></label>
+					<textarea id="form_msg"></textarea>
+				</div>
+				<button class="send_btn" type="submit" id="label_submit" />
+			</div>
+		</form>
+
+	</div>
+	<script src="lang.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
